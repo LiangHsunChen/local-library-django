@@ -5,9 +5,6 @@ from .models import Author, Genre, Book, BookInstance, Language
 class BooksInstanceInline(admin.TabularInline):
     model = BookInstance
 
-# admin.site.register(Book)
-# Register the Admin classes for Book using the decorator
-
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
@@ -17,10 +14,6 @@ class BookAdmin(admin.ModelAdmin):
 
 class BookInline(admin.TabularInline):
     model = Book
-
-
-# admin.site.register(Author)
-# Define the admin class
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -35,8 +28,6 @@ admin.site.register(Author, AuthorAdmin)
 
 
 admin.site.register(Genre)
-# admin.site.register(BookInstance)
-# Register the Admin classes for BookInstance using the decorator
 
 
 @admin.register(BookInstance)
