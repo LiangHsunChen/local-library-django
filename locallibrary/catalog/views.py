@@ -14,6 +14,10 @@ class BookListView(generic.ListView):
     paginate_by = 2
 
 
+class BookDetailView(generic.DetailView):
+    model = Book
+
+
 def index(request):
     """View function for home page of site."""
 
