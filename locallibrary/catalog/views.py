@@ -1,5 +1,17 @@
 from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre
+from django.views import generic
+
+
+class BookListView(generic.ListView):
+    model = Book
+    # your own name for the list as a template variable
+    context_object_name = 'book_list'
+    queryset = Book.objects.filter(title__icontains='book')[
+        :5]  # Get 5 books containing the title war
+    # Specify your own template name/location
+    template_name = 'books/book_list.html'
+    paginate_by = 2
 
 
 def index(request):
